@@ -2,6 +2,9 @@ import { Routes,Route, Link } from "react-router-dom";
 import CreatePage from "./pages/CreatePage";
 import HomePage from "./pages/HomePage";
 import EditPage from "./pages/EditPage";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function App() {
   return (
@@ -14,11 +17,16 @@ export default function App() {
 
 
       </nav>
+
+      <div className="container mx-auto p-2 h-full">
       <Routes>
         <Route index element={<HomePage/>}></Route>
         <Route path="/create" element={<CreatePage/>}></Route>
         <Route path="/edit" element={<EditPage/>}></Route>
       </Routes>
+      </div>
+      <ToastContainer />
+
     </div>
   );
 }
