@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import EditPage from "./pages/EditPage";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import DeletePage from "./pages/DeletePage";
 
 
 export default function App() {
@@ -22,7 +23,8 @@ export default function App() {
       <Routes>
         <Route index element={<HomePage/>}></Route>
         <Route path="/create" element={<CreatePage/>}></Route>
-        <Route path="/edit" element={<EditPage/>}></Route>
+        <Route path="/edit/:id" element={<EditPage/>}></Route>
+        <Route path="/delete/:id" element={<DeletePage/>}></Route>
       </Routes>
       </div>
       <ToastContainer />
