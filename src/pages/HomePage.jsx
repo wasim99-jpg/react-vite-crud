@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios"
 import Product from "../components/Product"
 import { Link } from "react-router-dom";
+import { VITE_BACKEND_URL } from "../App";
 
 const HomePage = () => {
 
@@ -14,7 +15,7 @@ const HomePage = () => {
             setIsLoading(true);
 
             //await response from http request
-            const response = await axios.get("http://localhost:3000/api/products");
+            const response = await axios.get(`${VITE_BACKEND_URL}/api/products`);
 
             //display response data in console log
             console.log(response.data);
