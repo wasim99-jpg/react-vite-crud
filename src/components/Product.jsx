@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import {toast} from "react-toastify"
 import Swal from 'sweetalert2'
-import { VITE_BACKEND_URL } from "../App";
+//import { VITE_BACKEND_URL } from "../App";
 
 const Product = ({product,getProducts}) => {
 
@@ -18,7 +18,7 @@ const Product = ({product,getProducts}) => {
           })
           if(result.isConfirmed){
             try{
-                await axios.delete(`${VITE_BACKEND_URL}/api/products/${id}`)
+                await axios.delete(`https://be-node-api.onrender.com/api/products/${id}`)
                 toast.success("succefully deleted product")
                 getProducts();
             }catch(error){
